@@ -1,3 +1,29 @@
+body {
+	background: #01589f;
+}
 .container {
  margin: auto;	
+	background: #f0dc83;
+	padding: 10px;
+}
+.hide {
+	display: none;
+}
+
+.show{
+	display:	block;
+}
+
+#score{
+	background: white;
+	border: solid blue 2px;
+	height: 100px;
+	width:100px;
+}
+
+#timer{
+	background: white;
+	border: solid blue 2px;
+	height: 100px;
+	width:100px;
 }

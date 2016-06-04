@@ -1,121 +1,99 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Jersey Trivia</title>
-	<link rel="stylesheet" href="assets/css/reset.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-	
-</head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8" id="headline">
-				<h1> Time Remaining:</h1>
+	<html>
+	<head>
+		<title>Jersey Trivia</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+			<link rel="stylesheet" href="assets/css/style.css">
+			<script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+			<script src="assets/javascript/app.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Jersey Trivia</h1>
+				<div class="row">
+						<div class="col-md-8" id="start"><button>Start</button></div>
+				</div>
+
+				<div class="row">
+						<div class="col-md-8" id="timer"></div>
+				</div>
+					
+			<div class="row" id="quiz">	
+				<div class="col-md-8">
+				<form>
+				<div class="question">
+					<p>Discovered in the summer of 1858, this creature was designated the state dinosaur of New Jersey in 1991</p>
+			  	<label><input type="radio" name="group1" value="q">brontosaurus</label>
+					<label><input type="radio" name="group1" value="p">hadrosaurus</label>
+					<label><input type="radio" name="group1" value="r">mastodon</label>
+					<label><input type="radio" name="group1" value="z">velociraptor</label>
+				</div>
+			
+				<div class="question">
+					<p>Also known as the wild canary, this official state bird feasts on seeds from dandelions, sunflowers, and ragweed.</p>
+					<label><input type="radio" name="group2" value="p">eastern goldfinch</label>
+					<label><input type="radio" name="group2" value="q">pigeon</label>
+					<label><input type="radio" name="group2" value="r">golden eagle</label>
+					<label><input type="radio" name="group2" value="z">bobolink</label>
+				</div>	
+				
+
+				<div class="question">
+					<p>Adopted in 1777, this state motto appears on the great seal and state flag.</p>
+					<label><input type="radio" name="group3" value="q">Justitia Omnibus</label>
+					<label><input type="radio" name="group3" value="p">Liberty and Properity</label>
+					<label><input type="radio" name="group3" value="r">Freedom and Unity</label>
+					<label><input type="radio" name="group3" value="z">Sit vis nobiscum</label>
+				</div>	
+
+				<div class="question">
+					<p>This nutritious state fruit can be found growing wild in much of New Jersey; commercially, 38 million pounds are produced annually.</p>
+				  <label><input type="radio" name="group4" value="q">tomato</label>
+				  <label><input type="radio" name="group4" value="r">strawberry</label>
+				  <label><input type="radio" name="group4" value="p">blueberry</label>
+				  <label><input type="radio" name="group4" value="z">cranberry</label>
+				</div>	
+
+				<div class="question">
+					<p>Born in Caldwell, NJ in 1837, this president served two non-consecutive terms.</p>
+					<label><input type="radio" name="group5" value="p">Grover Cleveland</label>
+					<label><input type="radio" name="group5" value="q">Samuel Adams</label>
+					<label><input type="radio" name="group5" value="r">Woodrow Wilson</label>
+					<label><input type="radio" name="group5" value="z">Benjamin Harrison</label>
+				</div>	
+
+				<div class="question">
+					<p>While many debate which particular tree inspired Joyce Kilmer's poem "Trees," this species is the designated state tree.</p>
+					<label><input type="radio" name="group6" value="z">sugar maple</label>
+					<label><input type="radio" name="group6" value="p">red oak</label>
+					<label><input type="radio" name="group6" value="q">white birch</label>
+					<label><input type="radio" name="group6" value="r">bitternut hickory</label>
+				</div>	
+
+				<div class="question">
+					<p>This state insect is a familiar sight during spring and summer and is an important pollinator for the Garden State</p>
+					<label><input type="radio" name="group7" value="z">mosquito</label>
+					<label><input type="radio" name="group7" value="q">carpenter ant</label>
+					<label><input type="radio" name="group7" value="p">honey bee</label>
+					<label><input type="radio" name="group7" value="r">yellow jacket</label>
+				</div>	
+
+				<div class="question">
+					<p>Not only is the state flower lovely to look at, it's nutritious too!  Used medicinally by Native American tribes and modern herbalists, it is also high in vitamins A and C.</p>
+					<label><input type="radio" name="group8" value="q">sunflower</label>
+					<label><input type="radio" name="group8" value="r">dandelion</label>
+					<label><input type="radio" name="group8" value="p">violet</label>
+					<label><input type="radio" name="group8" value="z">daisy</label>
+				</div>
+
+				<div><button class="button" id="done">Done</button></div>
+			</form>
+			</div>
+
+			<div class="row">	
+				<div class="col-md-8 hide" id="score"></div>
 			</div>
 		</div>
-		
-		<div class="row">	
-			<div class="col-md-8">
-
-		
-		
-<div class="radio quiz">
-	
-	<div class="q1">
-	<p>Discovered in the summer of 1858, this creature was designated the state dinosaur of New Jersey in 1991</p>
-	  <label><input type="radio" name="group1" value="wrong">brontosaurus</label>
-
-	  <label><input type="radio" name="group1" value="right">hadrosaurus</label>
-
-	  <label><input type="radio" name="group1" value="wrong">mastodon</label>
-
-	  <label><input type="radio" name="group1" value="wrong">velociraptor</label>
-	</div>
-		
-		<div class="q1">
-	<p>Also known as the wild canary, this official state bird feasts on seeds from dandelions, sunflowers, and ragweed.</p>
-	  <label><input type="radio" name="group2" value="right">eastern goldfinch</label>
-
-	  <label><input type="radio" name="group2" value="wrong">pigeon</label>
-
-	  <label><input type="radio" name="group2" value="wrong">golden eagle</label>
-
-	  <label><input type="radio" name="group2" value="wrong">bobolink</label>
-	</div>	
-
-	<div class="q3">
-	<p>Adopted in 1777, this state motto appears on the great seal and state flag.</p>
-	  <label><input type="radio" name="group3" value="wrong">Justitia Omnibus</label>
-
-	  <label><input type="radio" name="group3" value="right">Liberty and Properity</label>
-
-	  <label><input type="radio" name="group3" value="wrong">Freedom and Unity</label>
-
-	  <label><input type="radio" name="group3" value="wrong">Sit vis nobiscum</label>
-	</div>	
-
-	<div class="q4">
-	<p>This nutritious state fruit can be found growing wild in much of New Jersey; commercially, 38 million pounds are produced annually.</p>
-	  <label><input type="radio" name="group4" value="wrong">tomato</label>
-
-	  <label><input type="radio" name="group4" value="wrong">strawberry</label>
-
-	  <label><input type="radio" name="group4" value="right">blueberry</label>
-
-	  <label><input type="radio" name="group4" value="wrong">cranberry</label>
-	</div>	
-	<div class="q5">
-	<p>Born in Caldwell, NJ in 1837, this president served two non-consecutive terms.</p>
-	  <label><input type="radio" name="group5" value="right">Grover Cleveland</label>
-
-	  <label><input type="radio" name="group5" value="wrong">Samuel Adams</label>
-
-	  <label><input type="radio" name="group5" value="wrong">Woodrow Wilson</label>
-
-	  <label><input type="radio" name="group5" value="wrong">Benjamin Harrison</label>
-	</div>	
-
-	<div class="q6">
-	<p>While many debate which particular tree inspired Joyce Kilmer's poem "Trees," this species is the designated state tree.</p>
-	  <label><input type="radio" name="group6" value="wrong">sugar maple</label>
-
-	  <label><input type="radio" name="group6" value="right">red oak</label>
-
-	  <label><input type="radio" name="group6" value="wrong">white birch</label>
-
-	  <label><input type="radio" name="group6" value="wrong">bitternut hickory</label>
-	</div>	
-	<div class="q7">
-	<p>This state insect is a familiar sight during spring and summer and is an important pollinator for the Garden State</p>
-	  <label><input type="radio" name="group7" value="wrong">mosquito</label>
-
-	  <label><input type="radio" name="group7" value="wrong">carpenter ant</label>
-
-	  <label><input type="radio" name="group7" value="right">honey bee</label>
-
-	  <label><input type="radio" name="group7" value="wrong">yellow jacket</label>
-	</div>	
-
-	<div class="q8">
-	<p>Not only is the state flower lovely to look at, it's nutritious too!  Used medicinally by Native American tribes and modern herbalists, it is also high in vitamins A and C.</p>
-	  <label><input type="radio" name="group8" value="wrong">sunflower</label>
-
-	  <label><input type="radio" name="group8" value="wrong">dandelion</label>
-
-	  <label><input type="radio" name="group8" value="right">violet</label>
-
-	  <label><input type="radio" name="group8" value="wrong">daisy</label>
-	</div>
-
-<div><button class="button">Submit</button></div>
-</div>
-
-
-
-
-<script src="https://code.jquery.com/jquery-2.2.3.js"></script>
-<script src="assets/javascript/app.js"></script>
-
-</body>
+	</body>
 </html>
