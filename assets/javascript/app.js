@@ -1,15 +1,16 @@
 $(document).ready(function(){
 //VARIABLES
 
-var counter = 20;
+var counter = 60;
 var amountCorrect = 0;
+
 
 //FUNCTIONS
 
 function timer(){
 	timer = setInterval(function(){ 
 		//show the counter
-		$('#timer').html(counter);
+		$('#timer').html("Time Remaining:<br \>" + counter);
 
 		//reduce the number of seconds left by 1
 			counter--;
@@ -27,10 +28,15 @@ function timer(){
 
 function quizLoad(){
 	$("#start").addClass("hide");
+	$("#timer").removeClass("hide");
+	$("#quiz").removeClass("hide");
+	$("#done").removeClass("hide");
 }
 
 function quizHide(){
+	$("#timer").addClass("hide");
 	$("#quiz").addClass("hide");
+	$("#done").addClass("hide");
 }
 function stopTimer() {
     clearInterval(timer);
@@ -44,13 +50,14 @@ function score(){
     	if(radio.value === "p" && radio.checked) {
       	amountCorrect++;
       	console.log(amountCorrect);
-    	}
+			}
   	}	
 	}
 }
 
 function showScore(){
 	$("#score").addClass("show");
+	$("#score").html('<h2>All Done!</h2> <p>Correct Answers: ' + amountCorrect );
 }
 
 //GAME
@@ -62,10 +69,11 @@ $("#start").on("click", function(){
  	quizLoad();
 });
 
-//Score quiz
+//Score quiz when user clicks done. Oherwise, score will calculate when time runs out.
 
 $("#done").on("click", function(){
  	quizHide();
+ 	stopTimer(); 
  	score();
  	showScore();
 });

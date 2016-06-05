@@ -1,8 +1,33 @@
 body {
 	background: #01589f;
 }
-.container {
+h1 {
+	font-family: 'Cherry Cream Soda', cursive;
+	font-size: 40px;
+	text-align: center;
+}
+
+p{
+	padding: 12px;
+	font-size:18px;
+}
+
+label {
+	text-align: center;
+	font-size: 16px;
+	margin-right: 5px;
+
+}
+
+
+
+.container-fluid {
  margin: auto;	
+ width:800px;
+ margin-top: 20px;
+ padding: 15px;
+
+
 	background: #f0dc83;
 	padding: 10px;
 }
@@ -14,16 +39,57 @@ body {
 	display:	block;
 }
 
-#score{
-	background: white;
-	border: solid blue 2px;
-	height: 100px;
-	width:100px;
+
+#done-button{
+	background: #8FE276;
+	border-radius: 15px;
+	border: solid 2px #77BC62;
+	height: 50px;
+	width: 200px;
+	font-family: 'Cherry Cream Soda', cursive;
+	font-size: 30px;
+	text-align: center;
 }
 
-#timer{
-	background: white;
-	border: solid blue 2px;
-	height: 100px;
-	width:100px;
+
+
+#start-button{
+	background: #8FE276;
+	border-radius: 15px;
+	border: solid 2px #77BC62;
+	height: 50px;
+	width: 200px;
+	font-family: 'Cherry Cream Soda', cursive;
+	font-size: 30px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom:300px;
+}
+
+
+#score{
+	margin-top: 20px;
+	margin-bottom:50px;
+	background: #8FE276;
+	border-radius: 15px 50px;
+	border: solid 2px #77BC62;
+	height: 200px;
+	width: 300px;
+	font-family: 'Cherry Cream Soda', cursive;
+	font-size: 20;
+	text-align: center;
+}
+
+
+#timer {
+	margin-top: 20px;
+	padding:8px;
+	background: #8FE276;
+	border-radius: 15px;
+	border: solid 2px #77BC62;
+	height: 50px;
+	width: 200px;
+	font-family: 'Cherry Cream Soda', cursive;
+	font-size: 20;
+	text-align: center;
 }
