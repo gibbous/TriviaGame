@@ -41,6 +41,21 @@ function quizHide(){
 function stopTimer() {
     clearInterval(timer);
 }
+function bs() {
+		if (amountCorrect >= 5) {
+		$('#bs').append('<img alt="bruuuuuce" src="assets/images/bs1.gif" />');
+		$('#score').append("<h2>You're the Boss!</h2>");
+		$('#bs2').append('<img alt="bruuuuuce" src="assets/images/bs1.gif" />');
+
+	}
+
+	else {
+		$('#score').append("<h2>womp womp</h2>");
+		$('#bs').append('<img alt="sad" src="assets/images/cc.gif" />')
+		$('#bs2').append('<img alt="sad" src="assets/images/cc.gif" />')
+
+	}
+}
 
 function score(){
 	for(var i = 1; i <= 8; i++) {
@@ -76,6 +91,7 @@ $("#done").on("click", function(){
  	stopTimer(); 
  	score();
  	showScore();
+ 	bs();
 });
 
 
